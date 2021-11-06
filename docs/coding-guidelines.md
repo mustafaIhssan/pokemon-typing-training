@@ -10,13 +10,13 @@ The following snippet explains how the Gutenberg repository is structured omitti
     ├── src
     │   Source code of the client application.
     │
-    ├── src/hooks/{hook-name}/index.js
+    ├── src/hooks/{hook-name}/index.tsx
     │   Reusable react hooks without any data/state dependency.
     │
-    ├── src/components/{component-name}/index.js
+    ├── src/components/{component-name}/index.tsx
     │   Commponents that can be used accross the pages.
     │
-    └── src/pages/{page-name}/index.js
+    └── src/pages/{page-name}/index.tsx
         Entry point to the router's pages.
 
 

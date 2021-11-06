@@ -29,6 +29,7 @@
     "linebreak-style": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "react/jsx-filename-extension": [
       "warn",
