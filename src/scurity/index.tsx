@@ -21,7 +21,7 @@ const GAME_MANAGER_CONTEXT_DEFAULT = {
 }
 const SecurityContext = createContext(GAME_MANAGER_CONTEXT_DEFAULT)
 
-export const useSecurity = () => useContext(SecurityContext)
+export const useAuth = () => useContext(SecurityContext)
 
 export const SecurityProvider: FC = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
