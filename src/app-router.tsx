@@ -7,12 +7,13 @@ import {
     useLocation,
 } from 'react-router-dom'
 import { useAuth } from './scurity'
+import { LandingPage } from './pages/landing'
 
 export function AppRouter() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<div>ABC</div>} />
+                <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<div>Login</div>} />
 
                 <Route
