@@ -1,13 +1,22 @@
 import { createContext, FC, useContext, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
+type AuthLoginProps = {
+    isSuccess: boolean
+    data: object
+}
+
+type AuthLogoutProps = {
+    isSuccess: boolean
+}
+
 const LOCAL_STORAGE_KEY = 'accessToken'
 const LOCAL_STORAGE_USR = 'userData'
 const GAME_MANAGER_CONTEXT_DEFAULT = {
-    login: () => undefined,
-    logout: () => undefined,
+    login: (): AuthLoginProps => ({ isSuccess: false, data: {} }),
+    logout: (): AuthLogoutProps => ({ isSuccess: false }),
     user: {},
-    accessToken: null,
+    accessToken: '',
     isAuthenticated: false,
 }
 const SecurityContext = createContext(GAME_MANAGER_CONTEXT_DEFAULT)
@@ -25,16 +34,18 @@ export const SecurityProvider: FC = ({ children }) => {
     const userPlaceHolder = {}
     const accessTokenPlaceHolder = '23456y2345675654576'
 
-    const login = () => {
+    const login = (): AuthLoginProps => {
         setIsAuthenticated(true)
         setUser(userPlaceHolder)
         setAccessToken(accessTokenPlaceHolder)
+        return { isSuccess: true, data: userPlaceHolder }
     }
 
-    const logout = () => {
+    const logout = (): AuthLogoutProps => {
         setIsAuthenticated(false)
-        setUser(null)
-        setAccessToken(null)
+        setUser({})
+        setAccessToken('')
+        return { isSuccess: true }
     }
 
     return (
