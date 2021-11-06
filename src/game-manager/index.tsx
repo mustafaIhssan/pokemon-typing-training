@@ -1,4 +1,4 @@
-import { createContext, FC, useContext } from 'react'
+import React, { createContext, FC, useContext } from 'react'
 
 const GAME_MANAGER_CONTEXT_DEFAULT = {
     user: {},

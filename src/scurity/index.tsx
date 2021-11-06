@@ -1,9 +1,9 @@
-import { createContext, FC, useContext, useState } from 'react'
+import React, { createContext, FC, useContext, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
 type AuthLoginProps = {
     isSuccess: boolean
-    data: object
+    data: Record<string, unknown>
 }
 
 type AuthLogoutProps = {
